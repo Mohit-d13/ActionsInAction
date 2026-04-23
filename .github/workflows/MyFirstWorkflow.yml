@@ -6,6 +6,8 @@ on:
     - 'main'
   schedule:
   - cron: '0 21 23 * *'
+  repository_dispatch:
+    types: [event1, event2]
   workflow_dispatch:
     inputs:
       homedrive:
