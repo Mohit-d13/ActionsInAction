@@ -1,10 +1,33 @@
 name: My first Workflow
 
 on:
+  push:
+    branches:
+    - 'main'
   schedule:
   - cron: '0 21 23 * *'
-  workflow_dispatch: 
-
+  workflow_dispatch:
+    inputs:
+      homedrive:
+        description: 'The home drive on the machine'
+        required: true
+      logLevel:
+        description: 'Log Level'
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tag:
+        description: 'Apply tag after succesfull test run'
+        required: true
+        type: boolean
+      environment:
+        description: 'Environment to run tests againt'
+        type: environment
+        required: true
+        
 jobs:
   MyfirstJob:
     runs-on: ubuntu-latest
