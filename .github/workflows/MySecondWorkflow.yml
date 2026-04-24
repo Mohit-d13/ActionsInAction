@@ -1,9 +1,6 @@
 name: Running multiple jobs in sequence
 
 on:
-    push:
-        branches:
-        -   main
     workflow_dispatch:
 
 jobs:
