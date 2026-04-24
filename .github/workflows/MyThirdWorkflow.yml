@@ -10,11 +10,11 @@ jobs:
             max-parallel: 3
             matrix:
                 os_version: [macos-latest, ubuntu-latest]
-                node_version: [12, 14, 16]
+                node_version: [20, 22, 24]
 
         name: Displaying macos and ubuntu on different node version
         runs-on: ${{ matrix.os_version }}
         steps:
         -   uses: actions/setup-node@v3.6.0
             with:
-                node-version: ${{ matrix.node_version }}
+                node-version: ${{ matrix.node_version }}    

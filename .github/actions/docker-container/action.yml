@@ -1,0 +1,19 @@
+name: 'Mohit Damle'
+description: 'A Docker container action for demonstration'
+author: 'Mohit Damle'
+inputs:
+  input_one:
+    description: 'First input'
+    required: false
+  input_two:
+    description: 'Second input'
+    required: false
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/wulfland/container-demo:latest'
+  args:
+    - ${{ inputs.input_one }}
+    - ${{ inputs.input_two }}
+  env:
+    VARIABLE1: ${{ inputs.input_one }}
+    VARIABLE2: ${{ inputs.input_two }}
